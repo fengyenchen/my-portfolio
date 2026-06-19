@@ -95,6 +95,12 @@
   html {
     @apply font-sans;
   }
+  .page-title {
+    @apply flex flex-col items-start w-full text-xl font-bold font-mono text-primary border-b-2 border-primary/50 pb-2 mb-4;
+  }
+  .page-subtitle {
+    @apply text-primary text-lg border-l-2 border-primary/50 pl-2 mb-4;
+  }
 }
 
 ::selection {

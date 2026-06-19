@@ -9,11 +9,12 @@ import { AiOutlineMail } from "react-icons/ai";
 
 export default function Menu() {
   const items = [
+    { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Design Projects', path: '/design-projects' },
     { name: 'Programming Projects', path: '/programming-projects' },
     { name: 'Exhibitions', path: '/exhibitions' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Photography', path: '/photography' },
   ];
 
   const socials = [
@@ -62,7 +63,7 @@ export default function Menu() {
             <Link
                 key={index}
                 href={item.path}
-                className="flex justify-center items-center border border-primary/80 hover:bg-primary/80 px-4 py-2.5 rounded-md text-primary/80 hover:text-white text-sm font-mono font-bold tracking-wide transition"
+                className="flex justify-center items-center border border-primary/80 hover:bg-primary px-4 py-2.5 rounded-md text-primary/80 hover:text-white text-sm font-mono font-bold tracking-wide transition"
             >
                 {item.name}
             </Link>
