@@ -54,7 +54,7 @@ export default function Home() {
         <br></br>
         <ul className="list-disc ml-4">
           <li>🎨 Design & UX — Designing intuitive and engaging digital experiences.</li>
-          <li>💻 Frontend Development — Building interactive applications with modern web technologies.</li>
+          <li>🌐 Full-Stack Development — Building scalable, end-to-end applications with modern web technologies and robust architectures.</li>
           <li>🤖 AI & Product Thinking — Exploring how AI can create meaningful user value.</li>
           <li>✨ Creative Coding — Combining art, design, and code through interactive media and generative works.</li>
         </ul>

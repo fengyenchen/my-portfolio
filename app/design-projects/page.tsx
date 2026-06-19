@@ -16,7 +16,7 @@ export default function Home() {
       title: '演講海報設計',
       description: 'VJ 黃芮蓁的演講海報設計，透過視覺元素傳達演講主題與氛圍。',
       image: '/design-projects/251222-vj.png',
-      link: '',
+      link: '/design-projects/251222-vj.png',
       tag: ['海報設計', 'Illustration', '視覺設計']
     },
     {
@@ -30,8 +30,22 @@ export default function Home() {
       title: '內心之旅',
       description: '探索自我成長、情感變化與內在世界的多樣面貌。',
       image: '/design-projects/inner-journey.png',
-      link: '',
+      link: '/design-projects/inner-journey.png',
       tag: ['插畫', 'Photoshop', '視覺設計']
+    },
+    {
+      title: 'NTUMaker 社群貼文設計',
+      description: '為 NTUMaker 社群設計的貼文，旨在提升社群的視覺吸引力與參與度。',
+      image: '/design-projects/ntumaker.png',
+      link: 'https://www.instagram.com/ntu_maker/',
+      tag: ['貼文設計', 'Blender', 'Illustration']
+    },
+    {
+      title: '這顆石頭的日常用語',
+      description: '',
+      image: '/design-projects/line-stone.png',
+      link: 'https://store.line.me/stickershop/product/23688291/zh-Hant',
+      tag: ['貼圖設計', '角色設計', '插畫']
     },
     {
       title: 'Digital Pulse',
