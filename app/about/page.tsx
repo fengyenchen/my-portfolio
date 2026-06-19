@@ -1,6 +1,41 @@
 "use client"
 
 export default function Home() {
+  const education = [
+    {
+      institution: "國立臺灣大學",
+      department: "工商管理學系",
+      period: "2023 - NOW"
+    }
+  ];
+
+  const experience = [
+    {
+      institution: "台大自造者社 NTUMaker",
+      role: "美宣",
+      period: "2026.02 - NOW"
+    },
+    {
+      institution: "國立臺灣大學戲劇學系",
+      role: "沉浸式科技劇場專題實作助教",
+      period: "2025.09 - 2025.12"
+    },
+    {
+      institution: "國立臺灣大學戲劇學系",
+      role: "沉浸式科技劇場專題實作 期末成發主視覺",
+      period: "2025.12 - 2025.12"
+    },
+    {
+      institution: "臺大生傳畢製 - 恆溫宅急便",
+      role: "子計畫 - X&Y",
+      period: "2025.02 - 2025.05"
+    },
+    {
+      institution: "臺大工管杜鵑花節",
+      role: "主視覺",
+      period: "2024.03 - 2024.03"
+    },
+   ]
   return (
     <div className="h-full flex flex-col justify-start items-start gap-8 p-8 text-primary">
       <div className="content">
@@ -27,56 +62,31 @@ export default function Home() {
 
       <div className="education w-full">
         <h2 className="page-subtitle">Education</h2>
-        <div className="education-items flex flex-col gap-4 pl-2 w-full">
+         <div className="education-items flex flex-col gap-4 pl-2 w-full">
+        {education.map((edu, index) => (
           <div className="education-item flex flex-col hover:translate-x-1 transition">
-            <h3 className="text-primary/80 font-bold">國立臺灣大學</h3>
-            <div className="flex flex-row justify-between items-center w-full">
-              <h4 className="text-primary/80 text-sm">工商管理學系</h4>
-              <span className="block text-primary/50 text-xs">2023 - NOW</span>    
+            <h3 className="text-primary/80 font-bold">{edu.institution}</h3>
+            <div className="flex flex-col md:flex-row md:justify-between justify-start md:items-center w-full">
+              <h4 className="text-primary/80 text-sm">{edu.department}</h4>
+              <span className="block text-primary/50 text-xs">{edu.period}</span>    
             </div>
           </div>
-
+        ))}
         </div>
       </div>
       
       <div className="experience w-full">
         <h2 className="page-subtitle">Experience</h2>
         <div className="experience-items flex flex-col gap-4 pl-2 w-full">
-          <div className="experience-item flex flex-col hover:translate-x-1 transition">
-            <h3 className="text-primary/80 font-bold">台大自造者社 NTUMaker</h3>
-            <div className="flex flex-row justify-between items-center w-full">
-              <h4 className="text-primary/80 text-sm">美宣</h4>
-              <span className="block text-primary/50 text-xs">2026.02 - NOW</span>    
+          {experience.map((exp, index) => (
+            <div key={index} className="experience-item flex flex-col hover:translate-x-1 transition">
+              <h3 className="text-primary/80 font-bold">{exp.institution}</h3>
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full">
+                <h4 className="text-primary/80 text-sm">{exp.role}</h4>
+                <span className="block text-primary/50 text-xs">{exp.period}</span>
+              </div>
             </div>
-          </div>
-          <div className="experience-item flex flex-col hover:translate-x-1 transition">
-            <h3 className="text-primary/80 font-bold">國立臺灣大學戲劇學系</h3>
-            <div className="flex flex-row justify-between items-center w-full">
-              <h4 className="text-primary/80 text-sm">沉浸式科技劇場專題實作助教</h4>
-              <span className="block text-primary/50 text-xs">2025.09 - 2025.12</span>    
-            </div>
-          </div>
-          <div className="experience-item flex flex-col hover:translate-x-1 transition">
-            <h3 className="text-primary/80 font-bold">國立臺灣大學戲劇學系</h3>
-            <div className="flex flex-row justify-between items-center w-full">
-              <h4 className="text-primary/80 text-sm">沉浸式科技劇場專題實作 期末成發主視覺</h4>
-              <span className="block text-primary/50 text-xs">2025.12 - 2025.12</span>    
-            </div>
-          </div>
-          <div className="experience-item flex flex-col hover:translate-x-1 transition">
-            <h3 className="text-primary/80 font-bold">臺大生傳畢製 - 恆溫宅急便</h3>
-            <div className="flex flex-row justify-between items-center w-full">
-              <h4 className="text-primary/80 text-sm">子計畫 - X&Y</h4>
-              <span className="block text-primary/50 text-xs">2025.02 - 2025.05</span>    
-            </div>
-          </div>
-          <div className="experience-item flex flex-col hover:translate-x-1 transition">
-            <h3 className="text-primary/80 font-bold">臺大工管杜鵑花節</h3>
-            <div className="flex flex-row justify-between items-center w-full">
-              <h4 className="text-primary/80 text-sm">主視覺</h4>
-              <span className="block text-primary/50 text-xs">2024.03 - 2024.03</span>    
-            </div>
-          </div>
+          ))}
           
         </div>
       </div>
