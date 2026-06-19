@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: "這是我的個人作品集，歡迎查看我的作品！ This is my personal portfolio. Feel free to take a look at my work!",
     images: [
       {
-        url: "/og.png",
+        url: "/og.jpg",
         width: 1200,
         height: 630,
         alt: "馮妍禎的作品集預覽圖",
