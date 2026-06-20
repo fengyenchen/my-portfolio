@@ -28,6 +28,7 @@ model Education {
   institution String
   department  String
   period      String
+  sortOrder   Int      @default(0)
 }
 
 // Experience (About - experience) 資料表
@@ -36,6 +37,15 @@ model Experience {
   institution String // 機構
   role        String
   period      String
+  sortOrder   Int      @default(0)
+}
+
+// Skills (About - skill) 資料表
+model Skill {
+  id        String   @id @default(uuid())
+  name      String
+  category  String
+  sortOrder Int      @default(0)
 }
 
 // Design Projects 資料表
@@ -46,6 +56,7 @@ model DesignProject {
   imgSrc      String
   tags        String[]
   link        String
+  sortOrder   Int      @default(0)
 }
 
 // Programming Projects 資料表
@@ -58,6 +69,7 @@ model ProgrammingProject {
   link        String
   link2Desc   String
   link2       String
+  sortOrder   Int      @default(0)
 }
 
 // Exhibition 資料表
@@ -69,6 +81,7 @@ model Exhibition {
   description String
   subtitle     String
   imgSrc      String[]
+  sortOrder   Int      @default(0)
 }
 
 // Photography 資料表
@@ -78,4 +91,5 @@ model Photography {
   description String
   imgSrc      String
   link        String
+  sortOrder   Int      @default(0)
 }
