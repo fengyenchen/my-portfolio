@@ -30,10 +30,10 @@ export default function Menu({ info }: MenuProps) {
   ];
 
   const socials = [
-    { name: 'Email', url: { href: info.email }, icon: <AiOutlineMail className="w-6 h-6" /> },
-    { name: 'GitHub', url: { href: info.github }, icon: <AiOutlineGithub className="w-6 h-6" /> },
-    { name: 'LinkedIn', url: { href: info.linkedin }, icon: <AiOutlineLinkedin className="w-6 h-6" /> },
-    { name: 'Instagram', url: { href: info.instagram }, icon: <AiOutlineInstagram className="w-6 h-6" /> },
+    { name: 'Email', url: { href: info?.email }, icon: <AiOutlineMail className="w-6 h-6" /> },
+    { name: 'GitHub', url: { href: info?.github }, icon: <AiOutlineGithub className="w-6 h-6" /> },
+    { name: 'LinkedIn', url: { href: info?.linkedin }, icon: <AiOutlineLinkedin className="w-6 h-6" /> },
+    { name: 'Instagram', url: { href: info?.instagram }, icon: <AiOutlineInstagram className="w-6 h-6" /> },
   ];
 
   return (
@@ -42,7 +42,7 @@ export default function Menu({ info }: MenuProps) {
             {/* 大頭貼 */}
             <div className="w-24 h-24 rounded-full mx-auto mb-3 overflow-hidden border border-background shadow-sm transition">
                 <Image
-                src={info.imgSrc}
+                src={info?.imgSrc || '/favicon.png'}
                 width={100}
                 height={100}
                 alt="馮妍禎"
@@ -50,8 +50,8 @@ export default function Menu({ info }: MenuProps) {
                 />
             </div>
             
-            <h1 className="text-lg font-bold text-center tracking-widest text-primary">{info.name}</h1>
-            <p className="text-center text-xs text-primary/60 font-mono mt-0.5 mb-6">{info.role}</p>
+            <h1 className="text-lg font-bold text-center tracking-widest text-primary">{info?.name}</h1>
+            <p className="text-center text-xs text-primary/60 font-mono mt-0.5 mb-6">{info?.role}</p>
 
             <div className="flex items-center justify-center gap-6 w-full mb-4">
                 {socials.map((social) => (
