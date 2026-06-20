@@ -8,6 +8,12 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'fengyenchen.github.io',
       },
+      {
+        protocol: 'https',
+        hostname: 'lusxdwrmykhitndhsbwp.supabase.co',
+        port: '',
+        pathname: '/storage/v1/object/public/**',
+      },
     ],
   },
 };

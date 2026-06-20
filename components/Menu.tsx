@@ -7,7 +7,19 @@ import { AiOutlineLinkedin } from "react-icons/ai";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { AiOutlineMail } from "react-icons/ai";
 
-export default function Menu() {
+interface MenuProps {
+  info: {
+    name: string
+    role: string
+    imgSrc: string
+    email: string
+    github: string
+    linkedin: string
+    instagram: string
+  } | null // 預防資料庫是空的時候
+}
+
+export default function Menu({ info }: MenuProps) {
   const items = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -18,10 +30,10 @@ export default function Menu() {
   ];
 
   const socials = [
-    { name: 'Email', url: 'mailto:feng20050504@gmail.com', icon: <AiOutlineMail className="w-6 h-6" /> },
-    { name: 'GitHub', url: 'https://github.com/fengyenchen', icon: <AiOutlineGithub className="w-6 h-6" /> },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/fengyenchen/', icon: <AiOutlineLinkedin className="w-6 h-6" /> },
-    { name: 'Instagram', url: 'https://www.instagram.com/yenchen_0504/', icon: <AiOutlineInstagram className="w-6 h-6" /> },
+    { name: 'Email', url: { href: info.email }, icon: <AiOutlineMail className="w-6 h-6" /> },
+    { name: 'GitHub', url: { href: info.github }, icon: <AiOutlineGithub className="w-6 h-6" /> },
+    { name: 'LinkedIn', url: { href: info.linkedin }, icon: <AiOutlineLinkedin className="w-6 h-6" /> },
+    { name: 'Instagram', url: { href: info.instagram }, icon: <AiOutlineInstagram className="w-6 h-6" /> },
   ];
 
   return (
@@ -30,7 +42,7 @@ export default function Menu() {
             {/* 大頭貼 */}
             <div className="w-24 h-24 rounded-full mx-auto mb-3 overflow-hidden border border-background shadow-sm transition">
                 <Image
-                src="/profile.jpg"
+                src={info.imgSrc}
                 width={100}
                 height={100}
                 alt="馮妍禎"
@@ -38,8 +50,8 @@ export default function Menu() {
                 />
             </div>
             
-            <h1 className="text-lg font-bold text-center tracking-widest text-primary">馮妍禎</h1>
-            <p className="text-center text-xs text-primary/60 font-mono mt-0.5 mb-6">NTU BA</p>
+            <h1 className="text-lg font-bold text-center tracking-widest text-primary">{info.name}</h1>
+            <p className="text-center text-xs text-primary/60 font-mono mt-0.5 mb-6">{info.role}</p>
 
             <div className="flex items-center justify-center gap-6 w-full mb-4">
                 {socials.map((social) => (

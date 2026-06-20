@@ -8,6 +8,17 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// Info
+model Info {
+  id        String   @id @default(uuid())
+  name      String
+  role      String
+  imgSrc    String
+  email     String
+  github    String
+  linkedin  String
+  instagram String
+}
 
 // Home 打字機文字資料表
 model TypingText {

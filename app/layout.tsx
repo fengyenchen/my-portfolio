@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Menu from "@/components/Menu";
+import { prisma } from '@/lib/db'
+import Menu from '@/components/Menu'
 import MobileMenu from "@/components/MobileMenu";
 
 const geistSans = Geist({
@@ -18,27 +19,29 @@ export const metadata: Metadata = {
   title: "Yen-Chen, Feng's Portfolio",
   description: "Yen-Chen, Feng's 的數位名片",
   icons: {
-    icon: "/favicon.ico",
+    icon: "https://lusxdwrmykhitndhsbwp.supabase.co/storage/v1/object/public/my-portfolio/favicon.png",
   },
   openGraph: {
     title: "馮妍禎 (Feng Yen-Chen) 的作品集",
     description: "這是我的個人作品集，歡迎查看我的作品！ This is my personal portfolio. Feel free to take a look at my work!",
     images: [
       {
-        url: "/og.jpg",
+        url: "https://lusxdwrmykhitndhsbwp.supabase.co/storage/v1/object/public/my-portfolio/og.jpg",
         width: 1200,
-        height: 630,
+        height: 1200,
         alt: "馮妍禎的作品集預覽圖",
       },
     ],
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const infoData = await prisma.info.findFirst()
+  
   return (
     <html
       lang="zh-TW"
@@ -50,7 +53,7 @@ export default function RootLayout({
           {/* 選單 */}
           <div className="w-auto h-auto lg:w-80 lg:h-full shrink-0 border-0 lg:border border-primary rounded bg-transparent lg:bg-sub-background p-0 lg:p-4 overflow-visible lg:overflow-x-hidden lg:overflow-y-auto">
             <MobileMenu />
-            <Menu />
+            <Menu info={infoData} />
           </div>
 
           {/* 內容 */}
