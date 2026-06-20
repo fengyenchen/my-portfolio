@@ -30,10 +30,10 @@ export default function Menu({ info }: MenuProps) {
   ];
 
   const socials = [
-    { name: 'Email', url: { href: info?.email }, icon: <AiOutlineMail className="w-6 h-6" /> },
-    { name: 'GitHub', url: { href: info?.github }, icon: <AiOutlineGithub className="w-6 h-6" /> },
-    { name: 'LinkedIn', url: { href: info?.linkedin }, icon: <AiOutlineLinkedin className="w-6 h-6" /> },
-    { name: 'Instagram', url: { href: info?.instagram }, icon: <AiOutlineInstagram className="w-6 h-6" /> },
+    { name: 'Email', url: info?.email , icon: <AiOutlineMail className="w-6 h-6" /> },
+    { name: 'GitHub', url: info?.github , icon: <AiOutlineGithub className="w-6 h-6" /> },
+    { name: 'LinkedIn', url: info?.linkedin , icon: <AiOutlineLinkedin className="w-6 h-6" /> },
+    { name: 'Instagram', url: info?.instagram , icon: <AiOutlineInstagram className="w-6 h-6" /> },
   ];
 
   return (
@@ -57,7 +57,7 @@ export default function Menu({ info }: MenuProps) {
                 {socials.map((social) => (
                 <a
                     key={social.name}
-                    href={social.url}
+                    href={social.url || '/'}
                     target="_blank"
                     rel="noopener noreferrer" 
                     className="p-2 text-primary/80 hover:text-primary transition rounded-full hover:bg-primary/5"
