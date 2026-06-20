@@ -57,6 +57,7 @@ my-portfolio/
 
 ## 🗃️ 資料庫模型定義 (Data Schema)
 
+- **`info`**: Menu 詳細資訊。
 - **`TypingText`**: 首頁打字機動態文案。
 - **`Profile`**: 個人 Bio 與詳細簡介 (支援 HTML 富文本直接渲染)。
 - **`Education` & `Experience`**: 學經歷。
