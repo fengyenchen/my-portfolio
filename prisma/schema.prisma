@@ -1,0 +1,81 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+// Home 打字機文字資料表
+model TypingText {
+  id        String   @id @default(uuid())
+  text      String
+}
+
+// Profile (About - name, bio) 資料表
+model Profile {
+  id    String   @id @default(uuid())
+  name  String
+  bio   String   @db.Text
+}
+
+// Education (About - education) 資料表
+model Education {
+  id          String   @id @default(uuid())
+  institution String
+  department  String
+  period      String
+}
+
+// Experience (About - experience) 資料表
+model Experience {
+  id          String   @id @default(uuid())
+  institution String // 機構
+  role        String
+  period      String
+}
+
+// Design Projects 資料表
+model DesignProject {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  imgSrc      String
+  tags        String[]
+  link        String
+}
+
+// Programming Projects 資料表
+model ProgrammingProject {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  imgSrc      String
+  year       String
+  link        String
+  link2Desc   String
+  link2       String
+}
+
+// Exhibition 資料表
+model Exhibition {
+  id          String   @id @default(uuid())
+  title       String
+  place       String
+  period     String
+  description String
+  subtitle     String
+  imgSrc      String[]
+}
+
+// Photography 資料表
+model Photography {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  imgSrc      String
+  link        String
+}

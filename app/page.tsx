@@ -1,9 +1,23 @@
-"use client"
+"use client";
 
 import TextType from '@/components/TextType';
 import FuzzyText from '@/components/FuzzyText';
+import { useState, useEffect } from 'react';
 
-export default function Home() {
+export default function HomePage() {
+  const [typingTexts, setTypingTexts] = useState<string[]>([]);
+  
+  useEffect(() => {
+    fetch("/api/typingText")
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setTypingTexts(data);
+        }
+      })
+      .catch((err) => console.error("撈取打字機資料失敗:", err));
+  }, []);
+
   return (
     <div className="h-full flex flex-col justify-center items-center gap-8 p-8 text-primary">
       <FuzzyText
@@ -22,19 +36,17 @@ export default function Home() {
       </div>
 
       <div className="text-md md:text-md font-bold text-center">
-        <TextType
-          text={[
-            "我熱衷於探索設計、程式與互動體驗之間的可能性。",
-            "我喜歡從觀察使用者需求開始，透過設計思維與技術實作，將想法轉化為具有價值的數位產品與互動體驗。",
-            "我相信，好的產品不只是解決問題的工具，更是連結人與人、人與科技之間的重要媒介。"
-          ]}
-          typingSpeed={75}
-          pauseDuration={1500}
-          deletingSpeed={50}
-          showCursor={true}
-          cursorCharacter="_"
-          cursorBlinkDuration={0.5}
-        />
+        {typingTexts.length > 0 && (
+          <TextType
+            text={typingTexts}
+            typingSpeed={75}
+            pauseDuration={1500}
+            deletingSpeed={50}
+            showCursor={true}
+            cursorCharacter="_"
+            cursorBlinkDuration={0.5}
+          />
+        )}
       </div>
     </div>
   );
