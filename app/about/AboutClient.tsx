@@ -16,8 +16,19 @@ export default function AboutPage({ initialProfile, initialEducations, initialEx
     const [experienceList] = useState<Experience[]>(initialExperiences);
     const [skills] = useState<Skill[]>(initialSkills);
 
+    const isEmpty = !profile && educationList.length === 0 && experienceList.length === 0 && skills.length === 0
+
+    if (isEmpty) {
+        return (
+            <div className="h-full w-full flex flex-col justify-center items-center gap-8 p-8 text-primary relative">
+                <div className="fixed top-1/2 transform -translate-y-1/2 flex justify-center items-center text-primary/80">目前尚無簡介</div>
+            </div>
+
+        );
+    }
+
     return (
-        <div className="h-full flex flex-col justify-start items-start gap-8 p-8 text-primary">
+        <div className="h-full w-full flex flex-col justify-start items-start gap-8 p-8 text-primary relative">
             {profile ? (
                 <div className="content">
                     <h1 className="page-title">{profile?.name}</h1>

@@ -5,105 +5,105 @@ async function main() {
   console.log('開始寫入初始資料...')
 
   // Info
-  // await prisma.info.create({
-  //   data: {
-  //     name: "馮妍禎",
-  //     role: "NTU BA",
-  //     imgSrc: "https://lusxdwrmykhitndhsbwp.supabase.co/storage/v1/object/public/my-portfolio/profile.jpg",
-  //     email: "mailto:feng20050504@gmail.com",
-  //     github: "https://github.com/fengyenchen",
-  //     linkedin: "https://www.linkedin.com/in/fengyenchen/",
-  //     instagram: "https://www.instagram.com/yenchen_0504/"
-  //   }
-  // })
+  await prisma.info.create({
+    data: {
+      name: "馮妍禎",
+      role: "NTU BA",
+      imgSrc: "https://lusxdwrmykhitndhsbwp.supabase.co/storage/v1/object/public/my-portfolio/profile.jpg",
+      email: "mailto:feng20050504@gmail.com",
+      github: "https://github.com/fengyenchen",
+      linkedin: "https://www.linkedin.com/in/fengyenchen/",
+      instagram: "https://www.instagram.com/yenchen_0504/"
+    }
+  })
 
   // TypingText
-  // await prisma.typingText.createMany({
-  //   data: [
-  //     { text: "我熱衷於探索設計、程式與互動體驗之間的可能性。" },
-  //     { text: "我喜歡從觀察使用者需求開始，透過設計思維與技術實作，將想法轉化為具有價值的數位產品與互動體驗。" },
-  //     { text: "我相信，好的產品不只是解決問題的工具，更是連結人與人、人與科技之間的重要媒介。" }
-  //   ]
-  // })
+  await prisma.typingText.createMany({
+    data: [
+      { text: "我熱衷於探索設計、程式與互動體驗之間的可能性。" },
+      { text: "我喜歡從觀察使用者需求開始，透過設計思維與技術實作，將想法轉化為具有價值的數位產品與互動體驗。" },
+      { text: "我相信，好的產品不只是解決問題的工具，更是連結人與人、人與科技之間的重要媒介。" }
+    ]
+  })
 
   // Profile
-  // await prisma.profile.create({
-  //   data: {
-  //     name: "馮妍禎 Yen-Chen Feng",
-  //     bio: "<p>我熱衷於探索設計、程式與互動體驗之間的可能性。我喜歡從觀察使用者需求開始，透過設計思維與技術實作，將想法轉化為具有價值的數位產品與互動體驗。我相信，好的產品不只是解決問題的工具，更是連結人與人、人與科技之間的重要媒介。</p><br><p>Yen-Chen Feng is passionate about exploring the intersection of design, programming, and interactive experiences.</p><br><p>Starting from understanding users' needs, she combines design thinking with technical implementation to transform ideas into meaningful digital products and engaging experiences. Her interests span UX design, frontend development, creative coding, and emerging technologies, with a particular curiosity about how people interact with technology.</p><br><p>For Yen-Chen, great products are more than tools for solving problems—they are bridges that connect people, ideas, and technology. She believes that thoughtful design and innovative technology can work together to create experiences that are both functional and meaningful.</p><br><ul><li>- Design & UX — Designing intuitive and engaging digital experiences.</li><li>- Full-Stack Development — Building scalable, end-to-end applications with modern web technologies and robust architectures.</li><li>- AI & Product Thinking — Exploring how AI can create meaningful user value.</li><li>- Creative Coding — Combining art, design, and code through interactive media and generative works.</li></ul>"
-  //   }
-  // })
+  await prisma.profile.create({
+    data: {
+      name: "馮妍禎 Yen-Chen Feng",
+      bio: "<p>我熱衷於探索設計、程式與互動體驗之間的可能性。我喜歡從觀察使用者需求開始，透過設計思維與技術實作，將想法轉化為具有價值的數位產品與互動體驗。我相信，好的產品不只是解決問題的工具，更是連結人與人、人與科技之間的重要媒介。</p><br><p>Yen-Chen Feng is passionate about exploring the intersection of design, programming, and interactive experiences.</p><br><p>Starting from understanding users' needs, she combines design thinking with technical implementation to transform ideas into meaningful digital products and engaging experiences. Her interests span UX design, frontend development, creative coding, and emerging technologies, with a particular curiosity about how people interact with technology.</p><br><p>For Yen-Chen, great products are more than tools for solving problems—they are bridges that connect people, ideas, and technology. She believes that thoughtful design and innovative technology can work together to create experiences that are both functional and meaningful.</p><br><ul><li>- Design & UX — Designing intuitive and engaging digital experiences.</li><li>- Full-Stack Development — Building scalable, end-to-end applications with modern web technologies and robust architectures.</li><li>- AI & Product Thinking — Exploring how AI can create meaningful user value.</li><li>- Creative Coding — Combining art, design, and code through interactive media and generative works.</li></ul>"
+    }
+  })
 
   // Education
-  // await prisma.education.createMany({
-  //   data: [
-  //     {
-  //       institution: "國立臺灣大學",
-  //       department: "工商管理學系",
-  //       period: "2023 - NOW",
-  //       sortOrder: 1
-  //     }
-  //   ]
-  // })
+  await prisma.education.createMany({
+    data: [
+      {
+        institution: "國立臺灣大學",
+        department: "工商管理學系",
+        period: "2023 - NOW",
+        sortOrder: 1
+      }
+    ]
+  })
 
   // Experience
-  // await prisma.experience.createMany({
-  //   data: [
-  //     {
-  //       institution: "台大自造者社 NTUMaker",
-  //       role: "美宣",
-  //       period: "2026.02 - NOW",
-  //       sortOrder: 1
-  //     },
-  //     {
-  //       institution: "國立臺灣大學戲劇學系",
-  //       role: "沉浸式科技劇場專題實作助教",
-  //       period: "2025.09 - 2025.12",
-  //       sortOrder: 2
-  //     },
-  //     {
-  //       institution: "國立臺灣大學戲劇學系",
-  //       role: "沉浸式科技劇場專題實作 期末成發主視覺",
-  //       period: "2025.12 - 2025.12",
-  //       sortOrder: 3
-  //     },
-  //     {
-  //       institution: "臺大生傳畢製 - 恆溫宅急便",
-  //       role: "子計畫 - X&Y",
-  //       period: "2025.02 - 2025.05",
-  //       sortOrder: 4
-  //     },
-  //     {
-  //       institution: "臺大工管杜鵑花節",
-  //       role: "主視覺",
-  //       period: "2024.03 - 2024.03",
-  //       sortOrder: 5
-  //     }
-  //   ]
-  // })
+  await prisma.experience.createMany({
+    data: [
+      {
+        institution: "台大自造者社 NTUMaker",
+        role: "美宣",
+        period: "2026.02 - NOW",
+        sortOrder: 1
+      },
+      {
+        institution: "國立臺灣大學戲劇學系",
+        role: "沉浸式科技劇場專題實作助教",
+        period: "2025.09 - 2025.12",
+        sortOrder: 2
+      },
+      {
+        institution: "國立臺灣大學戲劇學系",
+        role: "沉浸式科技劇場專題實作 期末成發主視覺",
+        period: "2025.12 - 2025.12",
+        sortOrder: 3
+      },
+      {
+        institution: "臺大生傳畢製 - 恆溫宅急便",
+        role: "子計畫 - X&Y",
+        period: "2025.02 - 2025.05",
+        sortOrder: 4
+      },
+      {
+        institution: "臺大工管杜鵑花節",
+        role: "主視覺",
+        period: "2024.03 - 2024.03",
+        sortOrder: 5
+      }
+    ]
+  })
 
   // Skill
-  // await prisma.skill.createMany({
-  //   data: [
-  //     { name: "JavaScript", category: "Frontend", sortOrder: 1 },
-  //     { name: "React", category: "Frontend", sortOrder: 2 },
-  //     { name: "Next.js", category: "Frontend", sortOrder: 3 },
-  //     { name: "TypeScript", category: "Frontend", sortOrder: 4 },
-  //     { name: "Vue.js", category: "Frontend", sortOrder: 5 },
-  //     { name: "Vite", category: "Frontend", sortOrder: 6 },
-  //     { name: "Tailwind CSS", category: "Frontend", sortOrder: 7 },
-  //     { name: "p5.js", category: "Frontend", sortOrder: 8 },
-  //     { name: "Node.js", category: "Backend", sortOrder: 9 },
-  //     { name: "Python", category: "Backend", sortOrder: 10 },
-  //     { name: "Prisma / Supabase", category: "Backend", sortOrder: 11 },
-  //     { name: "Git", category: "Tools", sortOrder: 12 },
-  //     { name: "MySQL", category: "Database", sortOrder: 13 },
-  //     { name: "PostgreSQL", category: "Database", sortOrder: 14 },
-  //     { name: "Figma", category: "Design", sortOrder: 15 },
-  //     { name: "Illustrator", category: "Design", sortOrder: 16 },
-  //     { name: "Photoshop", category: "Design", sortOrder: 17 },
-  //   ]
-  // });
+  await prisma.skill.createMany({
+    data: [
+      { name: "JavaScript", category: "Frontend", sortOrder: 1 },
+      { name: "React", category: "Frontend", sortOrder: 2 },
+      { name: "Next.js", category: "Frontend", sortOrder: 3 },
+      { name: "TypeScript", category: "Frontend", sortOrder: 4 },
+      { name: "Vue.js", category: "Frontend", sortOrder: 5 },
+      { name: "Vite", category: "Frontend", sortOrder: 6 },
+      { name: "Tailwind CSS", category: "Frontend", sortOrder: 7 },
+      { name: "p5.js", category: "Frontend", sortOrder: 8 },
+      { name: "Node.js", category: "Backend", sortOrder: 9 },
+      { name: "Python", category: "Backend", sortOrder: 10 },
+      { name: "Prisma / Supabase", category: "Backend", sortOrder: 11 },
+      { name: "Git", category: "Tools", sortOrder: 12 },
+      { name: "MySQL", category: "Database", sortOrder: 13 },
+      { name: "PostgreSQL", category: "Database", sortOrder: 14 },
+      { name: "Figma", category: "Design", sortOrder: 15 },
+      { name: "Illustrator", category: "Design", sortOrder: 16 },
+      { name: "Photoshop", category: "Design", sortOrder: 17 },
+    ]
+  });
 
   // ProgrammingProject
   await prisma.programmingProject.createMany({
