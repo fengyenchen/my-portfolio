@@ -1,6 +1,9 @@
 import { prisma } from '@/lib/db';
 import AboutClient from './AboutClient';
 
+// 每次請求都重新生成頁面，確保獲取最新的資料
+export const revalidate = 0;
+
 export default async function AboutPage() {
   const profile = await prisma.profile.findFirst();
   const educationList = await prisma.education.findMany({
