@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     description: "這是我的個人作品集，歡迎查看我的作品！ This is my personal portfolio. Feel free to take a look at my work!",
     images: [
       {
-        url: "https://lusxdwrmykhitndhsbwp.supabase.co/storage/v1/object/public/my-portfolio/og.jpg",
+        url: "https://lusxdwrmykhitndhsbwp.supabase.co/storage/v1/object/public/my-portfolio/og.png",
         width: 1200,
-        height: 1200,
-        alt: "馮妍禎的作品集預覽圖",
+        height: 630,
+        alt: "馮妍禎的作品集",
       },
     ],
   },
