@@ -31,7 +31,7 @@ export default function PhotographyClient({ initialPhotographs }: ClientProps) {
             className="card border border-primary rounded p-4 w-full hover:bg-primary/5 transition flex flex-col justify-between"
           >
             <div className="flex flex-col grow">
-              <div className="relative w-full h-48 mb-4 rounded overflow-hidden flex items-center justify-center bg-primary/5">
+              <div className="relative w-full aspect-3/2 mb-4 rounded overflow-hidden flex items-center justify-center bg-primary/5">
 
                 {!loadedImages[index] && (
                   <div className="absolute inset-0 flex items-center justify-center z-10">
